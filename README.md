@@ -17,8 +17,8 @@ Install pyodbc and pandas Liberies
 In Terminal
 Import Liberies
 
-        import pyodbc
-        import pandas as pd
+    import pyodbc
+    import pandas as pd
   
 Create a connection with SQL Server AdventureWorks2022 Database
 
