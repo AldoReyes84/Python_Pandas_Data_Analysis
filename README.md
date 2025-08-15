@@ -7,7 +7,7 @@ Data Analysis for the SQL Server AdventureWorks2022 database with Python and Pan
 
 In a Virtual Enviorment install pyodbc and pandas Liberies
 
-  python -m venv (envioment_name)
+    python -m venv (envioment_name)
 
   
     pip install pandas
@@ -15,8 +15,8 @@ In a Virtual Enviorment install pyodbc and pandas Liberies
 
 Import Liberies
 
-  import pyodbc
-  import pandas as pd
+    import pyodbc
+    import pandas as pd
   
 Create a connection with SQL Server AdventureWorks2022 Database
 
