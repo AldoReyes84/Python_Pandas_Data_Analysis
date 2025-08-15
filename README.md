@@ -22,6 +22,24 @@ Import Liberies
   
 Create a connection with SQL Server AdventureWorks2022 Database
 
+    connection_string = (
+    'Driver={SQL Server};'
+    'Server=DESKTOP-6OVJLPM;'
+    'Database=AdventureWorksDW2022;'
+    'trusted_connection=yes;'
+    )
+
+    try:
+        connection = pyodbc.connect(connection_string)
+        print("Connection successful!")
+
+    except pyodbc.Error as e:
+        print("Error in connection:", e)
+    finally:
+        connection.close()
+        print("Connection closed.")
+
+    
   
 
 <img width="857" height="827" alt="image" src="https://github.com/user-attachments/assets/ab14ad11-9d7a-4d41-ba3e-d68953160c32" />
