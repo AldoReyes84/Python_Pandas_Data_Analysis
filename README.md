@@ -4,7 +4,23 @@ Go back to [Data Analysis Project](https://github.com/AldoReyes84/Data-Analisys_
 
 # Python_Pandas_Data_Analysis
 Data Analysis for the SQL Server AdventureWorks2022 database with Python and Pandas
-We start by creating a connection with SQL Server AdventureWorks2022 Database and print a simple query
+
+In a Virtual Enviorment install pyodbc and pandas Liberies
+
+  python -m venv (envioment_name)
+
+  
+    pip install pandas
+    pip install pyodbc
+
+Import Liberies
+
+  import pyodbc
+  import pandas as pd
+  
+Create a connection with SQL Server AdventureWorks2022 Database
+
+  
 
 <img width="857" height="827" alt="image" src="https://github.com/user-attachments/assets/ab14ad11-9d7a-4d41-ba3e-d68953160c32" />
 
