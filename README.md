@@ -93,6 +93,25 @@ Create totals for rows and columms
     'GrossMargin': [df['GrossMargin'].sum()],
     'MarginPercentage': [(df['GrossMargin'].sum() / df['SalesAmount'].sum()) * 100]
     })
+Append results
+
+        result = pd.concat([monthly, yearly], ignore_index=True)
+        result = pd.concat([result, grand_total], ignore_index=True)
+
+Format Results and Print
+
+     # Format columns
+    result['OrderQuantity'] = result['OrderQuantity'].apply(lambda x: f"{round(x):,}" if pd.notnull(x) else "")
+    result['TotalProductCost'] = result['TotalProductCost'].apply(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    result['DiscountAmount'] = result['DiscountAmount'].apply(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    result['SalesAmount'] = result['SalesAmount'].apply(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    result['GrossMargin'] = result['GrossMargin'].apply(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    result['MarginPercentage'] = result['MarginPercentage'].apply(lambda x: f"{x:.2f}%" if pd.notnull(x) else "")
+
+    print(result)
+
+<img width="845" height="956" alt="image" src="https://github.com/user-attachments/assets/158b1bac-846c-439f-bf6d-787c0a291011" />
+
 
 Lets get Sales by Month, Year and Grand Total
 
