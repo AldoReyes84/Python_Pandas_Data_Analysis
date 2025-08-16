@@ -114,7 +114,7 @@ Format Results and Print
 
 #Pivot Tables
 
-OrderQuantity
+    OrderQuantity
          pivot_order = pd.pivot_table(
             df,
             values='OrderQuantity',
@@ -128,7 +128,7 @@ OrderQuantity
 
 <img width="796" height="443" alt="image" src="https://github.com/user-attachments/assets/724b763e-51ef-4189-b7e6-21a08470d830" />
 
-SalesAmount
+    SalesAmount
          pivot_sales = pd.pivot_table(
         df,
         values='SalesAmount',
@@ -142,7 +142,7 @@ SalesAmount
 
 <img width="1122" height="479" alt="image" src="https://github.com/user-attachments/assets/7a27ebec-1c42-4103-8a88-cc582f06565c" />
 
-ProductCost
+    ProductCost
          pivot_cost = pd.pivot_table(
         df,
         values='TotalProductCost',
