@@ -41,6 +41,13 @@ Create a connection with SQL Server AdventureWorks2022 Database
 
 Define the fields to work with
 
+- Quantity  
+- Product Cost  
+- Total Discount  
+- Sales Amount  
+- Gross Margin *Calculated*  
+- Margin Percentage *Calculated*
+
       query = "SELECT [SalesAmount], [DueDate], [OrderQuantity], [TotalProductCost], [DiscountAmount] FROM FactResellerSales"
         df = pd.read_sql(query, connection)
         df['DueDate'] = pd.to_datetime(df['DueDate'])  # Ensure DueDate is datetime
