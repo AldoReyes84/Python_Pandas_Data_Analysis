@@ -110,15 +110,49 @@ Format Results and Print
 
     print(result)
 
-<img width="845" height="956" alt="image" src="https://github.com/user-attachments/assets/158b1bac-846c-439f-bf6d-787c0a291011" />
+<img width="856" height="966" alt="image" src="https://github.com/user-attachments/assets/fd7b84b0-366a-4e3c-9367-835a20bf913a" />
 
+#Pivot Tables
 
-Lets get Sales by Month, Year and Grand Total
+OrderQuantity
+     pivot_order = pd.pivot_table(
+        df,
+        values='OrderQuantity',
+        index='Year',
+        columns='Month',
+        aggfunc='sum',
+        margins=True,
+        margins_name='Total'
+    ).applymap(lambda x: f"{round(x):,}" if pd.notnull(x) else "")
+    print(pivot_order)
 
-<img width="1126" height="860" alt="image" src="https://github.com/user-attachments/assets/af2189c7-38ce-4781-acd5-9fed2a55ca2e" />
+<img width="796" height="443" alt="image" src="https://github.com/user-attachments/assets/724b763e-51ef-4189-b7e6-21a08470d830" />
 
-The Results are
+SalesAmount
+     pivot_sales = pd.pivot_table(
+        df,
+        values='SalesAmount',
+        index='Year',
+        columns='Month',
+        aggfunc='sum',
+        margins=True,
+        margins_name='Total'
+    ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    print(pivot_sales)
 
-<img width="874" height="860" alt="image" src="https://github.com/user-attachments/assets/d1ac4695-9c12-4973-b114-a3084ffe9689" />
+<img width="1122" height="479" alt="image" src="https://github.com/user-attachments/assets/7a27ebec-1c42-4103-8a88-cc582f06565c" />
 
+ProductCost
+     pivot_cost = pd.pivot_table(
+        df,
+        values='TotalProductCost',
+        index='Year',
+        columns='Month',
+        aggfunc='sum',
+        margins=True,
+        margins_name='Total'
+    ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    print(pivot_cost)
+
+<img width="1138" height="442" alt="image" src="https://github.com/user-attachments/assets/27233479-f906-43b6-8054-961d2058088e" />
 
