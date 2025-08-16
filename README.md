@@ -110,26 +110,26 @@ Format Results and Print
 
     print(result)
 
-<img width="856" height="966" alt="image" src="https://github.com/user-attachments/assets/fd7b84b0-366a-4e3c-9367-835a20bf913a" />
+<img width="1036" height="955" alt="image" src="https://github.com/user-attachments/assets/94b4f8cd-5b0e-4c8c-bd3f-616af7f0bf8b" />
 
 #Pivot Tables
 
 OrderQuantity
-     pivot_order = pd.pivot_table(
-        df,
-        values='OrderQuantity',
-        index='Year',
-        columns='Month',
-        aggfunc='sum',
+         pivot_order = pd.pivot_table(
+            df,
+            values='OrderQuantity',
+            index='Year',
+            columns='Month',
+            aggfunc='sum',
         margins=True,
         margins_name='Total'
-    ).applymap(lambda x: f"{round(x):,}" if pd.notnull(x) else "")
-    print(pivot_order)
+        ).applymap(lambda x: f"{round(x):,}" if pd.notnull(x) else "")
+        print(pivot_order)
 
 <img width="796" height="443" alt="image" src="https://github.com/user-attachments/assets/724b763e-51ef-4189-b7e6-21a08470d830" />
 
 SalesAmount
-     pivot_sales = pd.pivot_table(
+         pivot_sales = pd.pivot_table(
         df,
         values='SalesAmount',
         index='Year',
@@ -137,13 +137,13 @@ SalesAmount
         aggfunc='sum',
         margins=True,
         margins_name='Total'
-    ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
-    print(pivot_sales)
+        ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+        print(pivot_sales)
 
 <img width="1122" height="479" alt="image" src="https://github.com/user-attachments/assets/7a27ebec-1c42-4103-8a88-cc582f06565c" />
 
 ProductCost
-     pivot_cost = pd.pivot_table(
+         pivot_cost = pd.pivot_table(
         df,
         values='TotalProductCost',
         index='Year',
@@ -151,8 +151,8 @@ ProductCost
         aggfunc='sum',
         margins=True,
         margins_name='Total'
-    ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
-    print(pivot_cost)
+        ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+        print(pivot_cost)
 
 <img width="1138" height="442" alt="image" src="https://github.com/user-attachments/assets/27233479-f906-43b6-8054-961d2058088e" />
 
