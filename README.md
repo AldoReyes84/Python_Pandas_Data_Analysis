@@ -24,7 +24,7 @@ Create a connection with SQL Server AdventureWorks2022 Database
 
     connection_string = (
     'Driver={SQL Server};'
-    'Server=DESKTOP-6OVJLPM;'
+    'Server=(~Server_Name~);'
     'Database=AdventureWorksDW2022;'
     'trusted_connection=yes;'
     )
@@ -156,3 +156,57 @@ Format Results and Print
 
 <img width="1138" height="442" alt="image" src="https://github.com/user-attachments/assets/27233479-f906-43b6-8054-961d2058088e" />
 
+     # Calculate true margin percentage by year and month
+    grouped = df.groupby(['Year', 'Month']).agg({
+    'GrossMargin': 'sum',
+    'SalesAmount': 'sum'
+        }).reset_index()
+    grouped['MarginPercentage'] = grouped['GrossMargin'] / grouped['SalesAmount'] * 100
+
+    # Pivot table: years as rows, months as columns, margin percentage as values
+    pivot_true_margin_pct = grouped.pivot_table(
+    values='MarginPercentage',
+    index='Year',
+    columns='Month',
+    aggfunc='first',  # Only one value per group
+    ).applymap(lambda x: f"{x:.2f}%" if pd.notnull(x) else "")
+
+    # Calculate grand total margin percentage
+    grand_gross_margin = grouped['GrossMargin'].sum()
+    grand_sales_amount = grouped['SalesAmount'].sum()
+    grand_margin_pct = (grand_gross_margin / grand_sales_amount) * 100
+
+    # Append grand total row
+    pivot_true_margin_pct.loc['Grand Total'] = ["" for _ in pivot_true_margin_pct.columns]
+    pivot_true_margin_pct.loc['Grand Total', pivot_true_margin_pct.columns[0]] = f"{grand_margin_pct:.2f}%"
+
+    #Gross Margin Pivot
+    pivot_gross_margin = pd.pivot_table(
+        df,
+        values='GrossMargin',
+        index='Year',
+        columns='Month',
+        aggfunc='sum',
+        margins=True,
+        margins_name='Total'
+    ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+
+    print(pivot_true_margin_pct)
+
+<img width="1128" height="767" alt="image" src="https://github.com/user-attachments/assets/7b545678-e99b-4a30-82fe-20b2bbbaeefb" />
+
+    Discount Amount
+
+     pivot_discount = pd.pivot_table(
+        df,
+        values='DiscountAmount',
+        index='Year',
+        columns='Month',
+        aggfunc='sum',
+        margins=True,
+        margins_name='Total'
+    ).applymap(lambda x: f"${round(x):,}" if pd.notnull(x) else "")
+    print(pivot_discount)
+
+<img width="943" height="400" alt="image" src="https://github.com/user-attachments/assets/ddfcd221-1df3-4e9e-a0c5-5481227763b0" />
+    
