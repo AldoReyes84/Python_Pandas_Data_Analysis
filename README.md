@@ -41,16 +41,16 @@ Create a connection with SQL Server AdventureWorks2022 Database
 
 Define the fields to work with
 
-  query = "SELECT [SalesAmount], [DueDate], [OrderQuantity], [TotalProductCost], [DiscountAmount] FROM FactResellerSales"
-    df = pd.read_sql(query, connection)
-    df['DueDate'] = pd.to_datetime(df['DueDate'])  # Ensure DueDate is datetime
-    df['Year'] = df['DueDate'].dt.year
-    df['Month'] = df['DueDate'].dt.month
-    df['GrossMargin'] = df['SalesAmount'] - df['TotalProductCost']
+      query = "SELECT [SalesAmount], [DueDate], [OrderQuantity], [TotalProductCost], [DiscountAmount] FROM FactResellerSales"
+        df = pd.read_sql(query, connection)
+        df['DueDate'] = pd.to_datetime(df['DueDate'])  # Ensure DueDate is datetime
+        df['Year'] = df['DueDate'].dt.year
+        df['Month'] = df['DueDate'].dt.month
+        df['GrossMargin'] = df['SalesAmount'] - df['TotalProductCost']
 
-   # Calculate GrossMargin and MarginPercentage for each row
-    df['GrossMargin'] = df['SalesAmount'] - df['TotalProductCost']
-    df['MarginPercentage'] = (df['GrossMargin'] / df['SalesAmount']) * 100
+        Calculate GrossMargin and MarginPercentage for each row
+        df['GrossMargin'] = df['SalesAmount'] - df['TotalProductCost']
+        df['MarginPercentage'] = (df['GrossMargin'] / df['SalesAmount']) * 100
   
 
 <img width="857" height="827" alt="image" src="https://github.com/user-attachments/assets/ab14ad11-9d7a-4d41-ba3e-d68953160c32" />
