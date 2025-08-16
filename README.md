@@ -81,6 +81,18 @@ Create monthly and yearly group by aggregations
     yearly['Month'] = 'Subtotal'
     yearly['MarginPercentage'] = (yearly['GrossMargin'] / yearly['SalesAmount']) * 100
 
+Create totals for rows and columms 
+
+     grand_total = pd.DataFrame({
+    'Year': ['Grand Total'],
+    'Month': [''],
+    'OrderQuantity': [df['OrderQuantity'].sum()],
+    'TotalProductCost': [df['TotalProductCost'].sum()],
+    'DiscountAmount': [df['DiscountAmount'].sum()],
+    'SalesAmount': [df['SalesAmount'].sum()],
+    'GrossMargin': [df['GrossMargin'].sum()],
+    'MarginPercentage': [(df['GrossMargin'].sum() / df['SalesAmount'].sum()) * 100]
+    })
 
 Lets get Sales by Month, Year and Grand Total
 
