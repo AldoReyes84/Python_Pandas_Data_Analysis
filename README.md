@@ -210,3 +210,4 @@ Format Results and Print
 
 <img width="943" height="400" alt="image" src="https://github.com/user-attachments/assets/ddfcd221-1df3-4e9e-a0c5-5481227763b0" />
     
+The interpretation of these results are addresserd in the [Data Analysis Project/FactResellersSales_Table](https://github.com/AldoReyes84/Data-Analisys_For-AdventureWorksDW2022_SQL_PowerBI_Python_Excel/tree/main#factresellerssales-table) 
