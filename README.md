@@ -39,7 +39,7 @@ Create a connection with SQL Server AdventureWorks2022 Database
         connection.close()
         print("Connection closed.")
 
-**Resellers Sales
+##Resellers Sales
 
 Define the fields to work with
 
@@ -214,7 +214,7 @@ Format Results and Print
     
 The interpretation of these results are addresserd in the [Data Analysis Project/FactResellersSales_Table](https://github.com/AldoReyes84/Data-Analisys_For-AdventureWorksDW2022_SQL_PowerBI_Python_Excel/tree/main#factresellerssales-table) 
 
-**Internet Sales
+##Internet Sales
 
 We can uses the same code to preform the Internet Sales analysis just by replacing on the Query string the Table Name
 
