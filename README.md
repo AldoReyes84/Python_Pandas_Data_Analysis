@@ -60,7 +60,27 @@ Define the fields to work with
         df['MarginPercentage'] = (df['GrossMargin'] / df['SalesAmount']) * 100
   
 
-<img width="857" height="827" alt="image" src="https://github.com/user-attachments/assets/ab14ad11-9d7a-4d41-ba3e-d68953160c32" />
+Create monthly and yearly group by aggregations 
+
+     monthly = df.groupby(['Year', 'Month']).agg({
+    'SalesAmount': 'sum',
+    'OrderQuantity': 'sum',
+    'TotalProductCost': 'sum',
+    'DiscountAmount': 'sum',
+    'GrossMargin': 'sum'
+    }).reset_index()
+    monthly['MarginPercentage'] = (monthly['GrossMargin'] / monthly['SalesAmount']) * 100
+
+    yearly = df.groupby('Year').agg({
+    'SalesAmount': 'sum',
+    'OrderQuantity': 'sum',
+    'TotalProductCost': 'sum',
+    'DiscountAmount': 'sum',
+    'GrossMargin': 'sum'
+    }).reset_index()
+    yearly['Month'] = 'Subtotal'
+    yearly['MarginPercentage'] = (yearly['GrossMargin'] / yearly['SalesAmount']) * 100
+
 
 Lets get Sales by Month, Year and Grand Total
 
