@@ -39,6 +39,8 @@ Create a connection with SQL Server AdventureWorks2022 Database
         connection.close()
         print("Connection closed.")
 
+**Resellers Sales
+
 Define the fields to work with
 
 - Quantity  
@@ -211,3 +213,37 @@ Format Results and Print
 <img width="943" height="400" alt="image" src="https://github.com/user-attachments/assets/ddfcd221-1df3-4e9e-a0c5-5481227763b0" />
     
 The interpretation of these results are addresserd in the [Data Analysis Project/FactResellersSales_Table](https://github.com/AldoReyes84/Data-Analisys_For-AdventureWorksDW2022_SQL_PowerBI_Python_Excel/tree/main#factresellerssales-table) 
+
+**Internet Sales
+
+We can uses the same code to preform the Internet Sales analysis just by replacing on the Query string the Table Name
+
+     query = "SELECT [SalesAmount], [DueDate], [OrderQuantity], [TotalProductCost], [DiscountAmount] FROM FactInternetSales"
+
+The Results will be the same but this time for the FactInternetSales Table
+
+<img width="824" height="749" alt="image" src="https://github.com/user-attachments/assets/96f5ae92-b13d-4a43-bad8-67ea61c8ad62" />
+
+Order Quantity
+
+<img width="727" height="121" alt="image" src="https://github.com/user-attachments/assets/33376920-2eac-44d3-a07b-964b32a981ba" />
+
+Sales Amount
+
+<img width="1112" height="128" alt="image" src="https://github.com/user-attachments/assets/2676fde7-7f6e-4daa-903c-43a491d0dba0" />
+
+Product Cost
+
+<img width="1105" height="122" alt="image" src="https://github.com/user-attachments/assets/3a569cb6-2059-49b8-991b-294157a7eb1e" />
+
+Gross Margin
+
+<img width="1087" height="122" alt="image" src="https://github.com/user-attachments/assets/9c8af11a-bd57-4ac6-a25b-a1ab1b6aef48" />
+
+Margin Percentage
+
+<img width="819" height="103" alt="image" src="https://github.com/user-attachments/assets/fe05e322-8edb-4ce7-adb7-a47d93ac44ee" />
+
+Discount Amount
+
+<img width="493" height="123" alt="image" src="https://github.com/user-attachments/assets/c68e7a90-ccde-4507-8278-8c41e6ec21af" />
